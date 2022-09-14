@@ -26,8 +26,28 @@ app.get('/home',(req, res)=> {
     res.sendFile(path.join(__dirname, 'views', 'pagina1.html'));
 });
 
+// HTML pagina web sencilla
 app.get('/tarea',(req, res)=> {
     res.sendFile(path.join(__dirname, 'views', 'tarea.html'));
+});
+
+// Traductor de textos?
+app.get('/tarea1',(req, res)=>{
+    console.log(req.query);
+    res.send("Datos enviados por el hermosisimo query "+req.query.name);
+});
+
+
+// FORMULARIO
+app.get('/formulario',(req, res)=>{
+    console.log(req.query);
+    res.sendFile(path.join(__dirname, 'views', 'formulario.html'));
+});
+
+// FORMULARIO
+app.get('/pali',(req, res)=>{
+    console.log(req.query);
+    res.sendFile(path.join(__dirname, 'views', 'pali.html'));
 });
 
 // prueba query
@@ -35,6 +55,8 @@ app.get('/prueba1',(req, res)=>{
     console.log(req.query);
     res.send("Datos enviados por el hermosisimo query "+req.query.name);
 });
+
+
 
 // prueba params
 app.get('/prueba2/:name/:age', (req, res)=>{
